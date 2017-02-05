@@ -1,0 +1,25 @@
+<project>
+
+    <target name="clean">
+        <delete dir="C:\Users\sanma\Desktop\src\build"/>
+    </target>
+
+    <target name="compile">
+        <mkdir dir="C:\Users\sanma\Desktop\src\build\class"/>
+        <javac srcdir="C:\Users\sanma\Desktop\src\oata" destdir="C:\Users\sanma\Desktop\src\build\class"/>
+    </target>
+
+    <target name="jar">
+        <mkdir dir="C:\Users\sanma\Desktop\src\build\jar"/>
+        <jar destfile="C:\Users\sanma\Desktop\src\build\jar\HelloWorld.jar" basedir="C:\Users\sanma\Desktop\src\build\class">
+            <manifest>
+                <attribute name="Main-Class" value="oata.HelloWorld"/>
+            </manifest>
+        </jar>
+    </target>
+
+    <target name="run">
+        <java jar="C:\Users\sanma\Desktop\src\build\jar\HelloWorld.jar" fork="true"/>
+    </target>
+
+</project>
